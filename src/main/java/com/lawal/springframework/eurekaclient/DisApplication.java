@@ -50,7 +50,6 @@ class Service1Client implements CommandLineRunner {
 			public int compare(InstanceInfo o1, InstanceInfo o2) {
 				int v1 = getVersion(o1);
 				int v2 = getVersion(o2);
-
 				return Integer.compare(v2, v1);
 			}
 
@@ -63,7 +62,7 @@ class Service1Client implements CommandLineRunner {
 
 		}).findFirst().get();
 
-		System.out.println(new Date(latest.getLastDirtyTimestamp()) + " " + latest.getMetadata().get("instanceId"));
+		System.out.println(new Date(latest.getLastUpdatedTimestamp()) + " " + latest.getMetadata().get("instanceId"));
 
 	}
 
